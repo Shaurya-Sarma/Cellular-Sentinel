@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 383679288}
   - component: {fileID: 8585441654394305053}
   - component: {fileID: 3660554562423967186}
+  - component: {fileID: 5165643940682365787}
   m_Layer: 0
   m_Name: Basic Enemy
   m_TagString: Enemy
@@ -97,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3.5
+  turnSpeed: 0.1
+  repelRange: 0.5
+  repelAmount: 1
 --- !u!50 &8585441654394305053
 Rigidbody2D:
   serializedVersion: 4
@@ -117,7 +121,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &3660554562423967186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -135,7 +139,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.7066667, y: 1.7066667}
+    oldSize: {x: 2.048, y: 2.048}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -144,3 +148,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5165643940682365787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137178331117590997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 278abe3d7104d9d44936572d484babea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionEffect: {fileID: 4888689364763406151, guid: e316232ccacb09a4eb1c936d09dee1fe,
+    type: 3}
+  maxHP: 5

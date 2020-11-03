@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4103272618315263810}
   - component: {fileID: 4103272618315263871}
   - component: {fileID: 4103272618315263870}
+  - component: {fileID: 6756822487668397434}
+  - component: {fileID: 740575063}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -135,6 +137,36 @@ MonoBehaviour:
   bulletPrefab: {fileID: 2771381563400889401, guid: 12df2272b2af9334aafab7fba1ff89c4,
     type: 3}
   bulletForce: 20
+  shootingDelay: 0.2
+--- !u!58 &6756822487668397434
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103272618315263811}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.2193985}
+  serializedVersion: 2
+  m_Radius: 1.3222169
+--- !u!114 &740575063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4103272618315263811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626f9b89a5015bf418d2effa0cb17b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: 5
 --- !u!1 &4103272618931957944
 GameObject:
   m_ObjectHideFlags: 0
