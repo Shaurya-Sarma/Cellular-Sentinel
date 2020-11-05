@@ -25,8 +25,6 @@ public class PlayerShooting : MonoBehaviour
   }
   void Update()
   {
-    Debug.Log(curAmmo);
-
     shootingDelayTimer -= Time.deltaTime;
     if (isReloading)
     {

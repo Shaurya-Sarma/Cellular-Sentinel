@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : MonoBehaviour
+public class EnemyChaseAI : MonoBehaviour
 {
 
   private static List<Rigidbody2D> EnemyRBs;
