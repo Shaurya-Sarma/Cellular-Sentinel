@@ -8,11 +8,11 @@ public class EnemyChaseAI : MonoBehaviour
   private static List<Rigidbody2D> EnemyRBs;
 
   [Header("Enemy Movement")]
-  public float moveSpeed = 3f;
+  public float moveSpeed = 5f;
   [Range(0f, 1f)]
-  public float turnSpeed = .1f;
-  public float repelRange = .8f;
-  public float repelAmount = 1.5f;
+  public float turnSpeed = 1f;
+  public float repelRange = 2f;
+  public float repelAmount = 5f;
   private Transform _player;
   private Rigidbody2D _rb;
   private void Start()
@@ -40,30 +40,6 @@ public class EnemyChaseAI : MonoBehaviour
     newPos = MoveRegular(dir);
 
     _rb.MovePosition(newPos);
-
-    // if (isShooter)
-    // {
-    // 	float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
-    // 	_rb.rotation = angle;
-
-    // 	if (distance > shootDistance)
-    // 	{
-    // 		newPos = MoveRegular(dir);
-    // 	} else
-    // 	{
-    // 		newPos = MoveStrafing(dir);
-    // 	}
-
-    // 	Shoot();
-
-    // 	newPos -= _rb.position;
-
-    // 	_rb.AddForce(newPos, ForceMode2D.Force);
-
-    // } else
-    // {
-
-    // }
   }
 
   // Source: Brackeys

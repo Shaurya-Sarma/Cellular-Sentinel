@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
   private Image HealthBar;
   public float curHP;
-  private float maxHP = 100f;
+  private float maxHP = 50f;
   private PlayerMovement Player;
 
   private void Start()

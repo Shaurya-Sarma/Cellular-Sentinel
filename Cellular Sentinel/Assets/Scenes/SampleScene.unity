@@ -1951,6 +1951,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 1272542538718137506, guid: 246af3063650b7048b6a6019ae96ecd3, type: 3}
   - {fileID: 4137178331117590997, guid: 14a4c37f95bc0d14aa461863385d6579, type: 3}
+  - {fileID: 1651928313368079266, guid: 0ff777fb4da82bc4bb49c16b8f5076f6, type: 3}
 --- !u!4 &1947352865
 Transform:
   m_ObjectHideFlags: 0
