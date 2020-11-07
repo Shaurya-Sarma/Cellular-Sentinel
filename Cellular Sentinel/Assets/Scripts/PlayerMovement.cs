@@ -14,15 +14,18 @@ public class PlayerMovement : MonoBehaviour
   private Vector2 _mousePos;
   public float Health = 50f;
 
-  private ScoreManager _SM; 
-  private EndMenu _EM; 
+  private ScoreManager _SM;
+  private EndMenu _EM;
 
   private void Start()
   {
     _rb = GetComponent<Rigidbody2D>();
     _cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-    _SM = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
-    _EM = GameObject.Find("GameOverScreen").GetComponent<EndMenu>(); 
+    if (GameObject.Find("ScoreManager"))
+    {
+      _SM = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+    }
+    _EM = GameObject.Find("GameOverScreen").GetComponent<EndMenu>();
   }
 
   private void Update()
@@ -39,7 +42,10 @@ public class PlayerMovement : MonoBehaviour
       // Player Death
       Instantiate(explosionEffect, transform.position, Quaternion.identity);
       this.gameObject.SetActive(false);
-      _SM.scoreIncreasing = false;
+      if (_SM)
+      {
+        _SM.scoreIncreasing = false;
+      }
       Invoke("showEndScreen", 2f);
     }
   }
@@ -57,8 +63,9 @@ public class PlayerMovement : MonoBehaviour
     _rb.rotation = angle;
   }
 
-  private void showEndScreen() {
-     _EM.endMenuUI.SetActive(true);
+  private void showEndScreen()
+  {
+    _EM.endMenuUI.SetActive(true);
     Time.timeScale = 0f;
     _EM.isGameOver = true;
   }
@@ -71,11 +78,14 @@ public class PlayerMovement : MonoBehaviour
     }
   }
 
-  private void OnTriggerEnter2D(Collider2D other) {
-    if(other.CompareTag("Collect")) {
-      if(Health <= 45) { 
+  private void OnTriggerEnter2D(Collider2D other)
+  {
+    if (other.CompareTag("Collect"))
+    {
+      if (Health <= 45)
+      {
         Health += 5;
-      } 
+      }
       Destroy(other.gameObject);
     }
   }
