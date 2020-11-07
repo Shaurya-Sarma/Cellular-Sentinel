@@ -12,12 +12,15 @@ public class PlayerMovement : MonoBehaviour
   private Camera _cam;
   private Vector2 _movement;
   private Vector2 _mousePos;
-  public float Health = 100f;
+  public float Health = 50f;
+
+  private ScoreManager _SM; 
 
   private void Start()
   {
     _rb = GetComponent<Rigidbody2D>();
     _cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+    _SM = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
   }
 
   private void Update()
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
       // Player Death
       Instantiate(explosionEffect, transform.position, Quaternion.identity);
       this.gameObject.SetActive(false);
+      _SM.scoreIncreasing = false;
     }
 
 
@@ -57,6 +61,14 @@ public class PlayerMovement : MonoBehaviour
     if (other.collider.CompareTag("Enemy"))
     {
       Health -= 5;
+    }
+  }
+
+  private void OnTriggerEnter2D(Collider2D other) {
+    if(other.collider.CompareTag("Collect")) {
+      if(Health <= 45) { 
+        Health += 5;
+      } 
     }
   }
 }

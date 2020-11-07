@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
   private Material matWhite;
   private Material matDefault;
   private SpriteRenderer sr;
+  private ScoreManager _SM; 
 
   void Start()
   {
@@ -21,8 +22,8 @@ public class EnemyHealth : MonoBehaviour
     sr = GetComponent<SpriteRenderer>();
     matWhite = Resources.Load("WhiteFlash", typeof(Material)) as Material;
     matDefault = sr.material;
+    _SM = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
   }
-
   private void Update()
   {
     if (isHurt)
@@ -36,6 +37,9 @@ public class EnemyHealth : MonoBehaviour
     if (curHP <= 0)
     {
       DestroyEnemy();
+      if(_SM.scoreIncreasing) {
+      _SM.scoreCount += 100;
+      }
     }
   }
 
