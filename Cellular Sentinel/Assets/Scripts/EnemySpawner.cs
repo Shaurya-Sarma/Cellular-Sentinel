@@ -20,7 +20,8 @@ public class EnemySpawner : MonoBehaviour
     spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
     Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
     yield return new WaitForSeconds(time);
-    if(Player) {
+    if (Player)
+    {
       StartCoroutine(SpawnEnemy());
     }
   }

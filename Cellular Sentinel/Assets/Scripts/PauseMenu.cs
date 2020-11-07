@@ -52,6 +52,11 @@ public class PauseMenu : MonoBehaviour
     SceneManager.LoadScene("Menu");
   }
 
+  public void Restart()
+  {
+    SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+  }
+
   public void Quit()
   {
     // GameObject.FindGameObjectWithTag("GameMaster").GetComponent<AudioManager>().Play("Click");

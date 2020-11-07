@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3769275817750312360}
   - component: {fileID: 3769275817750312361}
   - component: {fileID: 792102824}
+  - component: {fileID: 355550132712615719}
   m_Layer: 0
   m_Name: amino_acid
   m_TagString: Collect
@@ -92,9 +93,28 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.22, y: 0}
   serializedVersion: 2
   m_Radius: 0.95
+--- !u!95 &355550132712615719
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769275817750312358}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad89be002f3127242a23a2488252415e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

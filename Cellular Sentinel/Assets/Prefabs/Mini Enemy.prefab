@@ -136,3 +136,6 @@ MonoBehaviour:
   explosionEffect: {fileID: 6111982151002131280, guid: 547629b6b7a332241a826dab40738c63,
     type: 3}
   maxHP: 1
+  aminoAcidPrefab: {fileID: 3769275817750312358, guid: 7b1f211e567cb4140836728ea57fe983,
+    type: 3}
+  healthSpawnChance: 10

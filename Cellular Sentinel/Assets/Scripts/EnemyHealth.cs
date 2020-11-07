@@ -9,12 +9,16 @@ public class EnemyHealth : MonoBehaviour
 
   [Header("Health Settings")]
   public int maxHP = 5;
+
+  [Header("Health Pack Settings")]
+  public GameObject aminoAcidPrefab;
+  public int healthSpawnChance = 5;
   private int curHP;
   private bool isHurt = false;
   private Material matWhite;
   private Material matDefault;
   private SpriteRenderer sr;
-  private ScoreManager _SM; 
+  private ScoreManager _SM;
 
   void Start()
   {
@@ -37,8 +41,9 @@ public class EnemyHealth : MonoBehaviour
     if (curHP <= 0)
     {
       DestroyEnemy();
-      if(_SM.scoreIncreasing) {
-      _SM.scoreCount += 100;
+      if (_SM.scoreIncreasing)
+      {
+        _SM.scoreCount += 100;
       }
     }
   }
@@ -60,6 +65,13 @@ public class EnemyHealth : MonoBehaviour
     GameObject effect = Instantiate(explosionEffect, transform.position, Quaternion.identity);
     Destroy(effect, 3f);
     this.gameObject.SetActive(false);
+
+    // Randomly Spawn A Health Drop
+    int num = Random.Range(1, healthSpawnChance);
+    if (num == 1)
+    {
+      Instantiate(aminoAcidPrefab, transform.position, Quaternion.identity);
+    }
   }
 
   private void ResetMaterial()

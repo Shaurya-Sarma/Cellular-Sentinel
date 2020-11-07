@@ -101,6 +101,9 @@ MonoBehaviour:
   explosionEffect: {fileID: 4888689364763406151, guid: e316232ccacb09a4eb1c936d09dee1fe,
     type: 3}
   maxHP: 3
+  aminoAcidPrefab: {fileID: 3769275817750312358, guid: 7b1f211e567cb4140836728ea57fe983,
+    type: 3}
+  healthSpawnChance: 4
 --- !u!70 &969425479
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
